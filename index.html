@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pravritti 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="title-bar">
+            <img src="logo-left.png" alt="Left Logo" class="logo">
+            <h1>Pravritti 2025</h1>
+            <img src="logo-right.png" alt="Right Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Featured Events</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">OCS</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Linkedin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="slideshow">
+                <div class="slide active"><img src="assets/hero1.jpeg" alt="Slide 1"></div>
+                <div class="slide"><img src="assets/hero2.jpeg" alt="Slide 2"></div>
+                <div class="slide"><img src="assets/hero3.jpeg" alt="Slide 3"></div>
+                <div class="slide"><img src="assets/hero4.jpeg" alt="Slide 4"></div>
+            </div>
+            <div class="hero-text">
+                <h2>Welcome to Our Website</h2>
+                <p>Your success is our priority. Explore our services and get in touch!</p>
+            </div>
+        </section>
+        <section class="about">
+            <h2>Featured Events</h2>
+            <div class="tiles">
+                <div class="tile">
+                    <img src="assets/career_fair.png" alt="Event 1">
+                    <h3>Event Title 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="register-button">Register Here</a>
+                </div>
+                <div class="tile">
+                    <img src="assets/mock_interviews.png" alt="Event 2">
+                    <h3>Event Title 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="register-button">Register Here</a>
+                </div>
+                <div class="tile">
+                    <img src="assets/Speed Networking.png" alt="Event 3">
+                    <h3>Event Title 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="register-button">Register Here</a>
+                </div>
+                <div class="tile">
+                    <img src="assets/closing.jpeg" alt="Event 4">
+                    <h3>Event Title 4</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="register-button">Register Here</a>
+                </div>
+                <div class="tile">
+                    <img src="assets/closing.jpeg" alt="Event 5">
+                    <h3>Event Title 5</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="register-button">Register Here</a>
+                </div>
+                <div class="tile">
+                    <img src="assets/closing.jpeg" alt="Event 6">
+                    <h3>Event Title 6</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="register-button">Register Here</a>
+                </div>
+            </div>
+        </section>
+        <section class="schedule">
+            <h2>Schedule</h2>
+            <div class="date-selector">
+                <button class="date-button active" data-date="8 March">8 March</button>
+                <button class="date-button" data-date="9 March">9 March</button>
+            </div>
+            <div class="event-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Event Time</th>
+                            <th>Event Location</th>
+                            <th>Register Now</th>
+                        </tr>
+                    </thead>
+                    <tbody id="event-list">
+                        <!-- Events for 8 March -->
+                        <tr class="event" data-date="8 March">
+                            <td>Opening Ceremony, address by _____</td>
+                            <td>10:00AM</td>
+                            <td>LH325</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March">
+                            <td>AWS Women in Tech</td>
+                            <td>9:00AM</td>
+                            <td>LH316</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March" style="display: none;">
+                            <td>Adobe Emerge - Building Digital Experience for future</td>
+                            <td>11:30 PM</td>
+                            <td>LH418</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March" style="display: none;">
+                            <td>Career Cafe by Atlassian</td>
+                            <td>12:30PM</td>
+                            <td>LH318</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March" style="display: none;">
+                            <td>Financial Foresight with AI by DSP</td>
+                            <td>2:30 PM</td>
+                            <td>LH308</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March" style="display: none;">
+                            <td>Trading Simulation by DRW</td>
+                            <td>3:00 PM</td>
+                            <td>LH416</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March" style="display: none;">
+                            <td>Supply Chain Masterclass by HUL</td>
+                            <td>3:00 PM</td>
+                            <td>LH310</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March" style="display: none;">
+                            <td>Strategem</td>
+                            <td>11:30 AM</td>
+                            <td>LH410</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March" style="display: none;">
+                            <td>Autoexpo - Toyota</td>
+                            <td>Day Long</td>
+                            <td>Outside LHC</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March" style="display: none;">
+                            <td>Mock Interviews & GD</td>
+                            <td>Day Long</td>
+                            <td>LH413.1 - 413.4, 421, 422</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March" style="display: none;">
+                            <td>Poster presentation</td>
+                            <td>Day Long</td>
+                            <td>Level 3 Main Corridor</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="8 March" style="display: none;">
+                            <td>Eureka Junction</td>
+                            <td>Day Long</td>
+                            <td>Central Atrium</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                        <tr class="event" data-date="9 March" style="display: none;">
+                            <td>Eureka Junction</td>
+                            <td>Day Long</td>
+                            <td>Central Atrium</td>
+                            <td><a href="#" class="register-button">Register Now</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
