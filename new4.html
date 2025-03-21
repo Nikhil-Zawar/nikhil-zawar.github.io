@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Process</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        .table-container, .form-container {
+            flex: 1;
+            padding: 20px;
+        }
+        .table-container {
+            margin-right: 20px;
+        }
+        .form-container {
+            border-left: 1px solid #ccc;
+        }
+        .hidden { display: none; }
+        .checkbox-group { margin: 10px 0; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #0d00ff;
+            color: white;
+        }
+        button {
+            background-color: #004cff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #857ede;
+        }
+
+        .flag-box {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: white;
+        }
+        .core { background-color: rgb(255, 149, 0); }
+        .linkedin { background-color: rgb(0, 166, 255); }
+        .placements { background-color: green; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="table-container">
+        <h1>OCS Pitching - Nikhil Zawar</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Recruiter Name</th>
+                    <th>Flag</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Company A</td>
+                    <td>Mitika Sampat</td>
+                    <td><span class="flag-box core">Core</span></td>
+                    <td><button onclick="updateData('John Doe', '123-456-7890', 'recruiter@example.com')">Update Data</button></td>
+                </tr>
+                <tr>
+                    <td>Company B</td>
+                    <td>Elizabeth Hurley</td>
+                    <td><span class="flag-box placements">CTM Alloted</span></td>
+                    <td><button onclick="updateData('Jane Smith', '987-654-3210', 'jane@example.com')">Update Data</button></td>
+                </tr>
+                <tr>
+                    <td>Company C</td>
+                    <td>Christine Murphy</td>
+                    <td><span class="flag-box placements">CTM Alloted</span></td>
+                    <td><button onclick="updateData('Christine Murphy', '987-654-3210', 'mruph.drw@drw.com')">Update Data</button></td>
+                </tr>
+                <tr>
+                    <td>Company C</td>
+                    <td>Rahul Narain</td>
+                    <td><span class="flag-box linkedin">LinkedIn</span></td>
+                    <td><button onclick="updateData('Alice Johnson', '555-555-5555', 'alice@example.com')">Update Data</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="form-container">
+        <div id="recruiterInfo" class="hidden">
+            <h2>Recruiter Information</h2>
+            <p><strong>Recruiter Name:</strong> <span id="recruiterName"></span></p>
+            <p><strong>Contact:</strong> <span id="recruiterContact"></span></p>
+            <p><strong>Email:</strong> <span id="recruiterEmail"></span></p>
+        </div>
+
+        <div id="formSection" class="hidden">
+            <h2>Recruitment Process</h2>
+            <div class="checkbox-group">
+                <label>Contact Established:</label>
+                <input type="radio" name="contactEstablished" value="yes" onclick="showNext('processInfo')"> Yes
+                <!-- <input type="radio" name="contactEstablished" value="no" onclick="hideNext('processInfo')"> No -->
+            </div>
+
+            <div id="processInfo" class="hidden">
+                <label>Process Info Conveyed:</label>
+                <input type="radio" name="processInfo" value="yes" onclick="showNext('interestedToHire')"> Yes
+                <!-- <input type="radio" name="processInfo" value="no" onclick="hideNext('interestedToHire')"> No -->
+            </div>
+
+            <div id="interestedToHire" class="hidden">
+                <label>Interested to Hire:</label>
+                <input type="radio" name="interestedToHire" value="yes" onclick="showNext('sendMail')"> Yes
+                <input type="radio" name="interestedToHire" value="no" onclick="showDenialReason()"> No
+            </div>
+
+            <div id="denialReason" class="hidden">
+                <label>Reason for Denial:</label>
+                <input type="text" placeholder="Enter reason here">
+            </div>
+
+            <div id="sendMail" class="hidden">
+                <label>Sent Mail:</label>
+                <input type="checkbox" name="sendMail" onclick="showregistrationstatus()"> Yes
+            </div>
+
+            <div id="regsiteredPortal" class="hidden">
+                <label>Registered on Portal:</label>
+                <input type="checkbox" name="registeredOnPortal" onclick="showjnfstatus()"> Yes
+            </div>
+
+            <div id="Status" class="hidden">
+                <label>Status:</label>
+                <input type="radio" name="status" value="initiated"> Initiated
+                <input type="radio" name="status" value="inProgress"> In Progress
+                <input type="radio" name="status" value="frozen"> Frozen
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateData(recruiterName, recruiterContact, recruiterEmail) {
+        document.getElementById('recruiterName').innerText = recruiterName;
+        document.getElementById('recruiterContact').innerText = recruiterContact;
+        document.getElementById('recruiterEmail').innerText = recruiterEmail;
+        document.getElementById('recruiterInfo').classList.remove('hidden');
+        document.getElementById('formSection').classList.remove('hidden');
+    }
+
+    function showNext(nextId) {
+        document.getElementById(nextId).classList.remove('hidden');
+        document.getElementById('denialReason').classList.add('hidden');
+    }
+
+    function hideNext(nextId) {
+        document.getElementById(nextId).classList.add('hidden');
+        if (nextId === 'processInfo') {
+            document.getElementById('interestedToHire').classList.add('hidden');
+            document.getElementById('denialReason').classList.add('hidden');
+            document.getElementById('sendMail').classList.add('hidden');
+        }
+    }
+
+    function showDenialReason() {
+        document.getElementById('denialReason').classList.remove('hidden');
+        document.getElementById('sendMail').classList.add('hidden');
+        document.getElementById('regsiteredPortal').classList.add('hidden');
+        document.getElementById('Status').classList.add('hidden');
+    }
+
+    function showregistrationstatus(){
+        document.getElementById('regsiteredPortal').classList.remove('hidden');
+    }
+
+    function showjnfstatus(){
+        document.getElementById('Status').classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>

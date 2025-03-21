@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitching Admin - Allot Companies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 80px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            padding: 20px;
+            max-width: 800px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .upload-container {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            color:white;
+            background-color: #0d00ff;
+        }
+        .upload-container input[type="file"] {
+            margin-top: 10px;
+        }
+        .selection-box {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            width: 150px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .box.selected {
+            background-color: #007b17;
+            color: white;
+        }
+        .names-section {
+            margin: 20px 0;
+        }
+        .names-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .name-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            width: 100px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .name-box.selected {
+            background-color: #007b17;
+            color: white;
+        }
+        .execute-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0d00ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .execute-button:hover {
+            background-color: #0056b3;
+        }
+        .section-heading {
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .divider {
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pitching Admin - Allot Companies</h1>
+
+        <div class="upload-container">
+            <label for="csvUpload">Upload CSV (must have 5 columns: Company Name, Recruiter Name, Recruiter Email ID, Recruiter Contact, Allotment Type):</label>
+            <input type="file" id="csvUpload" accept=".csv">
+        </div>
+
+        <div class="selection-box">
+            <div class="box" onclick="toggleSelection(this)">Among all UG CTMs</div>
+            <div class="box" onclick="toggleSelection(this)">Among all Exes</div>
+            <div class="box" onclick="toggleSelection(this)">Among all PG CTMs</div>
+            <div class="box" onclick="toggleSelection(this)">Among all NTMs</div>
+        </div>
+
+        <div class="names-section">
+            <div class="section-heading">UG CTMs</div>
+            <div class="names-container">
+                <div class="name-box" onclick="toggleSelection(this)">Nikhil Zawar</div>
+                <div class="name-box" onclick="toggleSelection(this)">Mansi Goswami</div>
+                <div class="name-box" onclick="toggleSelection(this)">Sathwick Gowda T</div>
+                <div class="name-box" onclick="toggleSelection(this)">Anshuman Shakya</div>
+                <div class="name-box" onclick="toggleSelection(this)">Asmi Jayee</div>
+                <div class="name-box" onclick="toggleSelection(this)">Sakhare Yash Balram</div>
+                <div class="name-box" onclick="toggleSelection(this)">Divya Shinde</div>
+                <div class="name-box" onclick="toggleSelection(this)">Pranjul Mishra</div>
+                <div class="name-box" onclick="toggleSelection(this)">Anirudh Yadav</div>
+                <div class="name-box" onclick="toggleSelection(this)">Sakhare Yash Balram</div>
+                <div class="name-box" onclick="toggleSelection(this)">Nikhil Zawar</div>
+                <div class="name-box" onclick="toggleSelection(this)">Mansi Goswami</div>
+
+            </div>
+            <div class="divider"></div>
+
+            <div class="section-heading">PG CTMs</div>
+            <div class="names-container">
+                <div class="name-box" onclick="toggleSelection(this)">Vishal</div>
+                <div class="name-box" onclick="toggleSelection(this)">Aniket Bondre</div>
+                <div class="name-box" onclick="toggleSelection(this)">Anvisha Chaturvedi</div>
+                <div class="name-box" onclick="toggleSelection(this)">Anish Guduri</div>
+                <div class="name-box" onclick="toggleSelection(this)">Tanvi Vaidyanathan</div>
+                <div class="name-box" onclick="toggleSelection(this)">Manu S Nair</div>
+            </div>
+
+            <div class="section-heading">Exes</div>
+            <div class="names-container">
+                <div class="name-box" onclick="toggleSelection(this)">Avin Gaur</div>
+                <div class="name-box" onclick="toggleSelection(this)">Pratham Chugh</div>
+                <div class="name-box" onclick="toggleSelection(this)">Samrudh Shetty</div>
+                <div class="name-box" onclick="toggleSelection(this)">Yash Kumar</div>
+                <div class="name-box" onclick="toggleSelection(this)">Yajika Dagar</div>
+                <div class="name-box" onclick="toggleSelection(this)">Suhani</div>
+                <div class="name-box" onclick="toggleSelection(this)">Priyanshu Chamoli</div>
+                <div class="name-box" onclick="toggleSelection(this)">Pearl Mutreja</div>
+                <div class="name-box" onclick="toggleSelection(this)">Atharva Agarwal</div>
+                <div class="name-box" onclick="toggleSelection(this)">Pushkar Tiwary</div>
+                <div class="name-box" onclick="toggleSelection(this)">Pushkar Tiwary</div>
+                <div class="name-box" onclick="toggleSelection(this)">Pushkar Tiwary</div>
+                
+            </div>
+            <div class="divider"></div>
+
+            
+        </div>
+
+        <button class="execute-button" onclick="executeAllotment()">Execute Allotment</button>
+    </div>
+
+    <script>
+        function toggleSelection(element) {
+            element.classList.toggle('selected');
+        }
+
+        function executeAllotment() {
+            alert('The allotment was made successfully!');
+        }
+    </script>
+
+</body>
+</html>
